@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
-trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+if [ "$DEBUG" == "1"]; then
+  trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+fi
 
 cd milestone-1-tests
 npm install
