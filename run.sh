@@ -11,8 +11,12 @@ command=$1
 echo "Running command: $1"
 
 if [ "$command" == 'lint' ]; then
+  ## Ignore if generating the report returns an exit code
+  set +e
   # Generate the report
   npx eslint --config=.eslintrc.json --output-file eslint-report.json --format json ../public/**.js
+  set -e
+  ## Fail the step if this command fails
   # Generate the terminal output
   npx eslint --config=.eslintrc.json ../public/**.js
 elif [ "$command" == 'browser' ]; then
