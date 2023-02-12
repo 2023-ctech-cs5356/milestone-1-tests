@@ -1,5 +1,7 @@
-#!/usr/bin/env bash -e
-cd tests
+#!/usr/bin/env bash
+set -e
+
+cd milestone-1-tests
 npm install
 
 command=$1
