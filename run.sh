@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-if [ "$DEBUG" == "1"]; then
+if [ "$DEBUG" == "1" ]; then
   trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 fi
 
