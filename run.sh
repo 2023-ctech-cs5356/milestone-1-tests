@@ -15,7 +15,9 @@ if [ "$command" == 'lint' ]; then
 elif [ "$command" == 'browser' ]; then
   target_dir=$PWD/../public/
   echo "TARGET_DIRECTORY is $target_dir"
-  python3 -m http.server 9000 --directory $target_dir &
+  nohup python3 -m http.server 9000 --directory $target_dir < /dev/null > /dev/null &
+  sleep 5
+  curl localhost:9000
   npx jest --config=jest.config.js
 elif [ "$command" == "" ]; then
  echo "No command provided."
