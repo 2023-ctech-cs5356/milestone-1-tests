@@ -10,5 +10,10 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.34.0"
+  },
+  "dependencies": {
+    "jest": "^29.4.2",
+    "jest-puppeteer": "^7.0.0",
+    "puppeteer": "^19.6.3"
   }
 }
