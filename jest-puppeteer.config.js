@@ -1,5 +1,3 @@
-/* globals module */
-
 module.exports = {
   launch: {
     headless: true,
