@@ -1,4 +1,3 @@
-/* globals module */
 const PORT = 9000;
 
 module.exports = {
@@ -8,4 +7,7 @@ module.exports = {
   testMatch: ["**/tests/**/*.test.js"],
   modulePaths: [".", "./node_modules"],
   testTimeout: 200000,
+  transform: {
+    "^.+\\.(js|jsx)$": "babel-jest",
+  },
 };
